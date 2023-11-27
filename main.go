@@ -87,7 +87,11 @@ func main() {
 
 		fmt.Print("Выберите действие: ")
 		var input int
-		fmt.Scan(&input)
+		_, err = fmt.Scan(&input)
+		if err != nil {
+			fmt.Println("Ошибка ввода")
+			return
+		}
 		file = fmt.Sprintf("%d.txt", options[input])
 	}
 }
